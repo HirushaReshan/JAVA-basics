@@ -169,7 +169,6 @@ flow (if/switch/loops), methods (return types, parameters, static, access modifi
 (1D/2D/jagged, arrays of objects), full OOP (classes, objects, constructors, this, getters,
 setters, encapsulation, static vs instance), exceptions, and file I/O.
 
-**Next step:** go back to `2_Concept_Teaching_Full.md` and `3_CarParkManagement_Deep_Dive.md` from
-your earlier study pack  they will now make complete sense, because every keyword and pattern
-used there has just been fully explained here from first principles. Then move on to the practice
+**Next step:** go to `[2_Concept_Teaching_Full.md](2_Concept_Teaching_Full.md)` and `[3_CarParkManagement_Deep_Dive.md](3_CarParkManagement_Deep_Dive.md)`
+Then move on to the practice
 questions and the timed mock test.

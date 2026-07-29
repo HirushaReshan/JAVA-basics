@@ -192,4 +192,4 @@ anything 2D  a grid, a 2D array, a table.
 4. When would you choose `do-while` over a plain `while`?
 5. In a nested loop, which loop finishes completely first for each cycle of the other  inner or outer?
 
-**Next: Part 3  Methods (what they are, and every keyword involved)**
+**Next: [Part 3  Methods (what they are, and every keyword involved)](Zero_Part3_Methods.md)**

@@ -181,4 +181,4 @@ Calling `add(2, 3)` uses the first; `add(2.5, 3.5)` uses the second. You won't l
 4. If `Ticket` has a private field `parkingFee`, why do we still need a `public` getter for it?
 5. What does `return;` (with nothing after it) do inside a `void` method?
 
-**Next: Part 4  Arrays (in full depth)**
+**Next: [Part 4  Arrays (in full depth)](Zero_Part4_Arrays.md)**

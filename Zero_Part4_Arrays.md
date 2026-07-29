@@ -148,4 +148,4 @@ covered in depth in Part 5.
 4. In `parkingSlots[row].length`, what exactly does this expression measure?
 5. What does `new int[18]` actually do?
 
-**Next: Part 5  Object-Oriented Programming (classes, objects, constructors, getters/setters  the big one)**
+**Next: [Part 5  Object-Oriented Programming (classes, objects, constructors, getters/setters  the big one)](Zero_Part5_OOP.md)**

@@ -266,4 +266,4 @@ we know there's now one more real object stored.
 5. Why can't `App.java`'s static `main()` method directly use an instance field from `Ticket`
    without first creating a `Ticket` object?
 
-**Next: Part 6  Exceptions and File I/O**
+**Next: [Part 6  Exceptions and File I/O](Zero_Part6_Exceptions_And_FileIO.md)**

@@ -85,11 +85,11 @@ solid, because they show up **inside** every question:
 ---
 
 ## Suggested Study Order
-1. Read **`2_Concept_Teaching_Full.md`**  learn every concept from zero, with examples.
-2. Read **`3_CarParkManagement_Deep_Dive.md`**  see these concepts applied line-by-line to the
+1. Read **`[2_Concept_Teaching_Full.md](2_Concept_Teaching_Full.md)`**  learn every concept from zero, with examples.
+2. Read **`[3_CarParkManagement_Deep_Dive.md](3_CarParkManagement_Deep_Dive.md)`**  see these concepts applied line-by-line to the
    actual Car Park project, with fully worked solutions for all 6 skill areas.
-3. Do **`4_Practice_And_Test_Questions.md`**  smaller drills to test your understanding of each
+3. Do **`[4_Practice_And_Test_Questions.md](4_Practice_And_Test_Questions.md)`**  smaller drills to test your understanding of each
    isolated concept.
-4. Sit **`5_Full_Practice_Lab_Test.md`** under timed conditions (90 minutes, no IDE, handwritten/typed
+4. Sit **`[5_Full_Practice_Lab_Test.md](5_Full_Practice_Lab_Test.md)`** under timed conditions (90 minutes, no IDE, handwritten/typed
    in a plain text editor  simulate the real Safe Exam Browser experience).
-5. Mark yourself using **`6_Answers_And_Cheat_Sheet.md`**, then review anything you got wrong.
+5. Mark yourself using **`[6_Answers_And_Cheat_Sheet.md](6_Answers_And_Cheat_Sheet.md)`**, then review anything you got wrong.

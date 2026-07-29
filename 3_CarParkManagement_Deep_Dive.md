@@ -1,8 +1,5 @@
 # Car Park Management  Full Deep Dive
 
-This walks through the **actual provided project** line-by-line, then gives you fully worked
-example solutions for all 6 skill areas, styled exactly like the real exam's likely tasks.
-
 > ⚠️ **Important:** The Final Lab Practical will NOT ask the exact same numbers/names as below.
 > These are worked *examples* using the same patterns  study the technique, not the literal text.
 

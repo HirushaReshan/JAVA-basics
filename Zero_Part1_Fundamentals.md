@@ -223,4 +223,4 @@ String line = input.nextLine();    // reads an entire line of text (until Enter 
 
 *(Answers are provided in the final answers file for this whole series.)*
 
-**Next: Part 2  Control Flow (if/else, switch, loops)**
+**Next: [Part 2 Control Flow (if/else, switch, loops)](Zero_Part2_Control_Flow.md)**

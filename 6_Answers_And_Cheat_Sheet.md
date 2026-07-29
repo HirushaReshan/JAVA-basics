@@ -418,6 +418,3 @@ try {
     System.out.println("An error occurred while saving.");
 }
 ```
-
-Good luck  you've got this. Master the **pattern**, and any variation of numbers/names/field
-labels on the day will just be filling in the same shape you've already practiced.

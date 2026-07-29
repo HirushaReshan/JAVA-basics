@@ -327,7 +327,6 @@ private static void saveToFile() {
 ---
 
 ## You now understand every word of every skill area
-Go back and re-read `2_Concept_Teaching_Full.md`, `3_CarParkManagement_Deep_Dive.md`,
-`4_Practice_And_Test_Questions.md`, and `5_Full_Practice_Lab_Test.md` from your earlier study
-pack  everything there will now be fully transparent, because there is no keyword or pattern
-left unexplained. When you're ready, sit the full 90-minute practice test under timed conditions.
+Go back and re-read `[2_Concept_Teaching_Full.md](2_Concept_Teaching_Full.md)`, `[3_CarParkManagement_Deep_Dive.md](3_CarParkManagement_Deep_Dive.md)`,
+`[4_Practice_And_Test_Questions.md](4_Practice_And_Test_Questions.md)`, and `[5_Full_Practice_Lab_Test.md](5_Full_Practice_Lab_Test.md)`
+When you're ready, sit the full 90-minute practice test under timed conditions.
