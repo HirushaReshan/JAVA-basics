@@ -1,14 +1,14 @@
-# Car Park Management — Full Deep Dive
+# Car Park Management  Full Deep Dive
 
 This walks through the **actual provided project** line-by-line, then gives you fully worked
 example solutions for all 6 skill areas, styled exactly like the real exam's likely tasks.
 
 > ⚠️ **Important:** The Final Lab Practical will NOT ask the exact same numbers/names as below.
-> These are worked *examples* using the same patterns — study the technique, not the literal text.
+> These are worked *examples* using the same patterns  study the technique, not the literal text.
 
 ---
 
-## Part A — Understanding the Existing Code (line-by-line)
+## Part A  Understanding the Existing Code (line-by-line)
 
 ### Lines 1–6: Imports and the global variable
 ```java
@@ -17,7 +17,7 @@ public class App {
     private static int[][] parkingSlots = null;
 ```
 - `Scanner` is imported for reading user input.
-- `parkingSlots` is a **static, private, jagged 2D array** — static because `main()` needs to
+- `parkingSlots` is a **static, private, jagged 2D array**  static because `main()` needs to
   access it without creating an `App` object; private because it's only used inside this class.
 
 ### Lines 8–16: `main()`
@@ -29,7 +29,7 @@ public static void main(String[] args) {
 }
 ```
 Three jobs only: greet the user, set up the data, start the menu loop. This method rarely needs
-editing itself — the exam edits the methods it *calls*.
+editing itself  the exam edits the methods it *calls*.
 
 ### Lines 19–35: `initialiseParkingSlots()`
 ```java
@@ -63,7 +63,7 @@ public static void runMenu() {
 ```
 Standard "menu loop" pattern: keep looping until the user picks `0`. If you're ever asked to add
 a **new menu option** (e.g. "3) Search vehicles" or "4) Save to file"), this is the method you'd
-extend — add a new `case` and call your new method.
+extend  add a new `case` and call your new method.
 
 ### Lines 73–113: `getOption()`
 Reads the option safely, catching bad (non-integer) input so the program doesn't crash.
@@ -76,10 +76,10 @@ try {
     input.nextLine();
 }
 ```
-Notice `input.nextLine()` inside the catch — this clears the bad input left in the buffer so the
+Notice `input.nextLine()` inside the catch  this clears the bad input left in the buffer so the
 loop doesn't spin forever on the same invalid token.
 
-### Lines 116–140: `parkCar()`  — **this is your `buyTicket()` equivalent**
+### Lines 116–140: `parkCar()`   **this is your `buyTicket()` equivalent**
 ```java
 private static void parkCar() {
     Scanner input = new Scanner(System.in);
@@ -97,9 +97,9 @@ private static void parkCar() {
     }
 }
 ```
-This is the **most important method in the whole project** — nearly every exam question
+This is the **most important method in the whole project**  nearly every exam question
 (validation, new class, arrays of objects, pricing, search source data) revolves around
-extending this method. Note it currently has **no bounds checking at all** — if you type row 9,
+extending this method. Note it currently has **no bounds checking at all**  if you type row 9,
 it will crash with an `ArrayIndexOutOfBoundsException`. That's exactly the gap Question-2-style
 tasks ask you to fix.
 
@@ -128,7 +128,7 @@ in each row.
 
 ---
 
-## Part B — Worked Solutions for Each Skill Area
+## Part B  Worked Solutions for Each Skill Area
 
 ### 🅰️ Skill 1: Changing slots per row (rewrite `initialiseParkingSlots()`)
 
@@ -143,7 +143,7 @@ public static void initialiseParkingSlots() {
     parkingSlots[3] = new int[15]; // Row D
 }
 ```
-Only the numbers in the brackets change — the method signature, the outer array declaration,
+Only the numbers in the brackets change  the method signature, the outer array declaration,
 and the number of rows (4) stay exactly the same unless the task explicitly says otherwise.
 
 ---
@@ -176,13 +176,13 @@ private static void parkCar() {
     }
 }
 ```
-Note the whole `if/else if/else if/else` is **one chain** — this ensures only one message is
+Note the whole `if/else if/else if/else` is **one chain**  this ensures only one message is
 ever printed per attempt, and later checks (like "already occupied") only run once earlier
 checks (like valid row) have passed.
 
 ---
 
-### 🅲️ Skill 3: A new class — `Ticket.java`
+### 🅲️ Skill 3: A new class  `Ticket.java`
 
 **Example task:** create a class with a vehicle registration number and a parking fee, plus a
 `printTicket()` method.
@@ -270,8 +270,8 @@ private static void parkCar() {
 ⚠️ Because `getOption()` uses `input.nextInt()` right before this method runs, and this version
 now uses `input.nextLine()` to read the registration number, you may need an extra
 `input.nextLine();` immediately after `getOption()`'s `nextInt()` call returns, OR create the
-`Scanner` carefully — this "leftover newline" issue is a common real gotcha. If your test setup
-already avoids this (e.g. the given project handles it), don't add anything unnecessary — but
+`Scanner` carefully  this "leftover newline" issue is a common real gotcha. If your test setup
+already avoids this (e.g. the given project handles it), don't add anything unnecessary  but
 know **why** it can happen if your output looks like a field was skipped.
 
 ---
@@ -332,7 +332,7 @@ file if you're asked to write the "complete" method/imports.
 
 ---
 
-## Part C — How These Pieces Fit Together (the full mental model)
+## Part C  How These Pieces Fit Together (the full mental model)
 
 ```
 main()
@@ -341,10 +341,10 @@ main()
        → getOption()
        → parkCar()             [Skills 2 and 4 live here]
        → showParkingLayout()
-       → searchTickets()       [Skill 5 — a NEW method you add + a NEW menu case]
-       → saveToFile()          [Skill 6 — a NEW method you add + a NEW menu case]
+       → searchTickets()       [Skill 5  a NEW method you add + a NEW menu case]
+       → saveToFile()          [Skill 6  a NEW method you add + a NEW menu case]
 
-Ticket.java                    [Skill 3 — a completely separate class file]
+Ticket.java                    [Skill 3  a completely separate class file]
   → used by parkCar() (creates Ticket objects)
   → used by searchTickets() (reads Ticket objects)
   → used by saveToFile() (reads Ticket objects)
@@ -357,15 +357,15 @@ differently every time.
 
 ---
 
-## Part D — Things That Commonly Trip Students Up
+## Part D  Things That Commonly Trip Students Up
 1. **Off-by-one errors**: remember `- 1` conversions from 1-based user input to 0-based array index.
 2. **Forgetting `this.`** in constructors/setters, which silently breaks the assignment.
-3. **Looping over the full array capacity (100) instead of the actual count** — causes
+3. **Looping over the full array capacity (100) instead of the actual count**  causes
    `NullPointerException` when you hit an empty (`null`) slot.
 4. **Comparing Strings with `==`** instead of `.equals()`.
 5. **Forgetting to import** `java.io.FileWriter` / `java.io.IOException` when writing file code.
-6. **Creating the object before checking success** — always calculate/create only inside the
+6. **Creating the object before checking success**  always calculate/create only inside the
    success branch.
-7. **Not rewriting the COMPLETE method** when asked — if the question says "rewrite the complete
+7. **Not rewriting the COMPLETE method** when asked  if the question says "rewrite the complete
    method," include the method signature, braces, and all original working code, not just your
    new lines.

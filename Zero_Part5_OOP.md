@@ -1,4 +1,4 @@
-# Java From Absolute Zero — Part 5: Object-Oriented Programming (OOP)
+# Java From Absolute Zero  Part 5: Object-Oriented Programming (OOP)
 
 This is the **most important part** for your exam (Questions 3 and 4 are entirely about this).
 Take your time here.
@@ -13,22 +13,22 @@ separate arrays:
 String[] emails = new String[100];
 double[] amounts = new double[100];
 ```
-But this is fragile — nothing stops `emails[5]` and `amounts[7]` from accidentally referring to
+But this is fragile  nothing stops `emails[5]` and `amounts[7]` from accidentally referring to
 two *different* people's data (a mismatch). **OOP solves this by bundling related data (and the
 actions on that data) together into one unit, called an object.**
 
 ---
 
-## 2. Class vs Object — the single most important distinction
+## 2. Class vs Object  the single most important distinction
 
 - A **class** is a **blueprint/template**. It defines *what information* and *what abilities*
-  something will have — but it is not, itself, a real "thing" you can use yet.
-- An **object** is an actual **instance** created from that blueprint — a real, usable "thing" in
+  something will have  but it is not, itself, a real "thing" you can use yet.
+- An **object** is an actual **instance** created from that blueprint  a real, usable "thing" in
   memory, with its own actual values filled in.
 
-**Analogy:** `class Car` is like an architectural blueprint for a car — it defines "a car has a
+**Analogy:** `class Car` is like an architectural blueprint for a car  it defines "a car has a
 colour and a speed, and can accelerate." An actual `Car` object is a specific car built from that
-blueprint — e.g. "a red car currently going 60mph." You can build many objects (many actual cars)
+blueprint  e.g. "a red car currently going 60mph." You can build many objects (many actual cars)
 from the same one blueprint (class).
 
 ```java
@@ -43,7 +43,7 @@ Car yourCar = new Car("blue"); // a DIFFERENT object, same blueprint, different 
 
 ---
 
-## 3. Writing a class — every single piece explained
+## 3. Writing a class  every single piece explained
 
 ```java
 public class Ticket {
@@ -90,7 +90,7 @@ These are **variables that live inside the class**, representing the actual data
 will hold. They are declared just like normal variables (type + name), but written directly
 inside the class, not inside any specific method.
 
-**Why `private`?** This is called **encapsulation** — one of the core ideas of OOP. By making
+**Why `private`?** This is called **encapsulation**  one of the core ideas of OOP. By making
 fields `private`, no code *outside* this class can directly do `someTicket.parkingFee = -999;`
 and corrupt the data. Instead, outside code is **forced** to go through your controlled
 getter/setter methods, which you could later add validation to if needed (e.g. "reject negative
@@ -108,25 +108,25 @@ object with `new`. Its job is to set up the object's initial data.
 
 Rules that make it a constructor (not a normal method):
 1. Its name must be **exactly the same** as the class name (`Ticket`).
-2. It has **no return type at all** — not even `void`. (This is different from every other
+2. It has **no return type at all**  not even `void`. (This is different from every other
    method you'll write.)
 
 **Why do the parameter names match the field names?** It's completely normal and expected style
-— `registrationNumber` (the field) and `registrationNumber` (the parameter) are allowed to share
-a name. This is exactly what `this.` is for (see below) — it lets Java tell them apart.
+ `registrationNumber` (the field) and `registrationNumber` (the parameter) are allowed to share
+a name. This is exactly what `this.` is for (see below)  it lets Java tell them apart.
 
 **Calling a constructor (creating an object):**
 ```java
 Ticket t = new Ticket("AB12 CDE", 5.0);
 ```
-- `new` — "actually build a real object in memory now."
-- `Ticket(...)` — calls the constructor, matching it by the number/type of arguments you give.
-- `"AB12 CDE"` and `5.0` — the arguments, which get copied into the constructor's parameters
+- `new`  "actually build a real object in memory now."
+- `Ticket(...)`  calls the constructor, matching it by the number/type of arguments you give.
+- `"AB12 CDE"` and `5.0`  the arguments, which get copied into the constructor's parameters
   `registrationNumber` and `parkingFee`.
-- `Ticket t = ...` — stores a reference to this new object in a variable called `t`, of type
+- `Ticket t = ...`  stores a reference to this new object in a variable called `t`, of type
   `Ticket`.
 
-### 3c. The `this` keyword — explained very precisely
+### 3c. The `this` keyword  explained very precisely
 `this` always means **"the specific object that this method/constructor is currently running
 for."** Inside the constructor:
 ```java
@@ -161,7 +161,7 @@ code can read it (since it can't access the private field directly).
 - Naming convention: `get` + the field name, with the first letter capitalised
   (`registrationNumber` → `getRegistrationNumber`).
 - Return type matches the field's type exactly.
-- Takes **no parameters** — it just hands back what's already stored.
+- Takes **no parameters**  it just hands back what's already stored.
 
 ### 3e. Setters
 ```java
@@ -171,7 +171,7 @@ public void setRegistrationNumber(String registrationNumber) {
 ```
 A setter **changes** the value of a private field from outside code.
 - Naming convention: `set` + field name.
-- Return type is always `void` (it doesn't give anything back — it just updates something).
+- Return type is always `void` (it doesn't give anything back  it just updates something).
 - Takes **one parameter**: the new value to store.
 - Uses `this.` for exactly the same reason as the constructor.
 
@@ -195,7 +195,7 @@ automatically refer to **that specific object's** own field values.
 
 ---
 
-## 4. Static vs Instance — the difference that trips people up most
+## 4. Static vs Instance  the difference that trips people up most
 
 | | **Static** | **Instance (non-static)** |
 |---|---|---|
@@ -208,8 +208,8 @@ automatically refer to **that specific object's** own field values.
 Ticket t1 = new Ticket("AB12", 5.0);
 Ticket t2 = new Ticket("CD34", 8.0);
 
-t1.getParkingFee(); // 5.0 — belongs to t1
-t2.getParkingFee(); // 8.0 — belongs to t2, completely separate from t1
+t1.getParkingFee(); // 5.0  belongs to t1
+t2.getParkingFee(); // 8.0  belongs to t2, completely separate from t1
 ```
 Each object has its **own independent copy** of every instance field. This is the entire reason
 OOP is powerful for something like the exam: you can have 100 separate `Ticket` objects, each
@@ -222,7 +222,7 @@ direct access). Your new class (`Payment`/`Ticket`/`Vehicle`) → fields and met
 
 ---
 
-## 5. Putting it all together — creating and using objects from `App.java`
+## 5. Putting it all together  creating and using objects from `App.java`
 
 ```java
 // Inside App.java (static context)
@@ -243,7 +243,7 @@ we know there's now one more real object stored.
 
 ---
 
-## 6. Access Modifiers — full recap in the OOP context
+## 6. Access Modifiers  full recap in the OOP context
 
 | Modifier | On a field | On a method | On a class |
 |---|---|---|---|
@@ -266,4 +266,4 @@ we know there's now one more real object stored.
 5. Why can't `App.java`'s static `main()` method directly use an instance field from `Ticket`
    without first creating a `Ticket` object?
 
-**Next: Part 6 — Exceptions and File I/O**
+**Next: Part 6  Exceptions and File I/O**

@@ -1,7 +1,7 @@
-# Master Class: Every Java Concept You Need — From Zero
+# Master Class: Every Java Concept You Need  From Zero
 
 This file teaches each concept **from scratch**, using small, simple examples first (not the
-exam project itself — that comes in file 3), so you build real understanding, not memorisation.
+exam project itself  that comes in file 3), so you build real understanding, not memorisation.
 
 ---
 
@@ -12,7 +12,7 @@ exam project itself — that comes in file 3), so you build real understanding, 
 int[] numbers = new int[5];   // 5 slots, indexes 0-4, all default to 0
 numbers[0] = 10;
 System.out.println(numbers[0]); // 10
-System.out.println(numbers.length); // 5 (a property, not a method — no brackets!)
+System.out.println(numbers.length); // 5 (a property, not a method  no brackets!)
 ```
 
 ### 2D Arrays (rectangular)
@@ -22,7 +22,7 @@ grid[0][0] = 1;
 grid[2][3] = 9;
 ```
 
-### Jagged Arrays (rows of *different* lengths) — **this is what the Car Park project uses**
+### Jagged Arrays (rows of *different* lengths)  **this is what the Car Park project uses**
 ```java
 int[][] parkingSlots = new int[4][];  // 4 rows, but lengths not yet fixed
 parkingSlots[0] = new int[18];        // Row A has 18 slots
@@ -31,10 +31,10 @@ parkingSlots[2] = new int[20];        // Row C has 20 slots
 parkingSlots[3] = new int[18];        // Row D has 18 slots
 ```
 **Why jagged, not rectangular?** Because each row can hold a different number of items. If you
-wrote `new int[4][20]`, every row would be forced to have 20 columns — not flexible enough.
+wrote `new int[4][20]`, every row would be forced to have 20 columns  not flexible enough.
 
 **Key exam skill:** if asked to change slot counts per row, you only touch the *numbers inside
-the brackets* on each row's line — the structure (`new int[4][]`, then 4 separate assignment
+the brackets* on each row's line  the structure (`new int[4][]`, then 4 separate assignment
 lines) stays the same.
 
 ```java
@@ -101,7 +101,7 @@ do {
 
 ---
 
-## 3. Object-Oriented Programming — Classes
+## 3. Object-Oriented Programming  Classes
 
 ### The blueprint idea
 A **class** is a template. An **object** is a real instance created from that template.
@@ -109,17 +109,17 @@ A **class** is a template. An **object** is a real instance created from that te
 ```java
 public class Vehicle {
 
-    // 1. Fields (attributes) — private = encapsulation
+    // 1. Fields (attributes)  private = encapsulation
     private String registrationNumber;
     private double parkingFee;
 
-    // 2. Constructor — runs when you create a new object with `new`
+    // 2. Constructor  runs when you create a new object with `new`
     public Vehicle(String registrationNumber, double parkingFee) {
         this.registrationNumber = registrationNumber;
         this.parkingFee = parkingFee;
     }
 
-    // 3. Getters — return the current value of a field
+    // 3. Getters  return the current value of a field
     public String getRegistrationNumber() {
         return registrationNumber;
     }
@@ -128,7 +128,7 @@ public class Vehicle {
         return parkingFee;
     }
 
-    // 4. Setters — change the value of a field
+    // 4. Setters  change the value of a field
     public void setRegistrationNumber(String registrationNumber) {
         this.registrationNumber = registrationNumber;
     }
@@ -168,7 +168,7 @@ private static Vehicle[] vehicles = new Vehicle[100];
 private static int vehicleCount = 0; // tracks how many are actually filled in
 ```
 This creates 100 **empty slots** (each `null` until you put a real object there). You are
-responsible for tracking how many are actually used — that's what `vehicleCount` is for.
+responsible for tracking how many are actually used  that's what `vehicleCount` is for.
 
 ### Only creating an object if a condition succeeds
 This is the pattern behind "Question 4" style tasks: you must gather input, calculate something,
@@ -189,7 +189,7 @@ private static void parkCar() {
 
     if (row < 0 || row > 3 || slot < 0 || slot >= parkingSlots[row].length) {
         System.out.println("Invalid row or slot.");
-        return; // stop here — nothing else should run
+        return; // stop here  nothing else should run
     }
 
     if (parkingSlots[row][slot] == 0) {
@@ -210,7 +210,7 @@ private static void parkCar() {
 ```
 
 **Exam-critical order to remember:**
-1. Collect all required input (including any *new* field, like a registration number/email —
+1. Collect all required input (including any *new* field, like a registration number/email 
    collected **first**, before row/slot, if the question says so)
 2. Validate ranges
 3. Check availability
@@ -218,7 +218,7 @@ private static void parkCar() {
 5. **Only if successful:** create the object and store it in the array
 6. Increment your counter
 
-A common mistake is creating the object *before* checking whether the slot was actually free —
+A common mistake is creating the object *before* checking whether the slot was actually free 
 always create it last, only inside the "success" branch.
 
 ---
@@ -251,7 +251,7 @@ private static void searchVehicles() {
 
 **Key things examiners look for:**
 - Looping only up to `vehicleCount` (or however many objects actually exist), **not** the full
-  array capacity (100) — otherwise you'll hit `null` objects and crash with a
+  array capacity (100)  otherwise you'll hit `null` objects and crash with a
   `NullPointerException`.
 - Using a `boolean found` flag, set to `true` inside the loop, checked *after* the loop ends.
 - Comparing `double`/`int` fields with `==`, but comparing `String` fields with `.equals()`
@@ -264,7 +264,7 @@ if (vehicles[i].getRegistrationNumber().equals(searchValue)) { ... }
 
 ---
 
-## 6. File I/O — Saving to a Text File
+## 6. File I/O  Saving to a Text File
 
 ### The simplest reliable pattern using `FileWriter`
 ```java
@@ -314,10 +314,10 @@ private static void saveToFile() {
 **Remember for the exam:**
 - File writing operations **must** be wrapped in `try/catch` because Java forces you to handle
   the possible checked exception (`IOException` or `FileNotFoundException`).
-- Import statements matter — if asked to write "complete" code, include the `import` line(s).
+- Import statements matter  if asked to write "complete" code, include the `import` line(s).
 - Always `close()` the writer (or examiners may deduct marks even if it's not always enforced
   by the compiler in a snippet).
-- "One line per record" means one `write`/`println` call per loop iteration — don't put a comma
+- "One line per record" means one `write`/`println` call per loop iteration  don't put a comma
   loop of all records into a single write.
 
 ---
@@ -332,8 +332,8 @@ input.nextLine();              // ⚠ consumes the leftover newline character
 String email = input.nextLine(); // now this actually works correctly
 ```
 If you mix `nextInt()`/`nextDouble()` with `nextLine()` without this extra consuming line, the
-`nextLine()` call will appear to be "skipped" — a classic bug. In the actual project, notice
-`parkCar()` only ever uses `nextInt()`, so this isn't an issue *yet* — but the moment you add
+`nextLine()` call will appear to be "skipped"  a classic bug. In the actual project, notice
+`parkCar()` only ever uses `nextInt()`, so this isn't an issue *yet*  but the moment you add
 `input.nextLine()` for an email/registration string, watch out for this.
 
 ### `switch` statement (used in `runMenu()`)
@@ -355,7 +355,7 @@ Always include `break;` unless you deliberately want fall-through, and always in
 ### static vs instance
 - Everything in `App.java` is `static` because `main()` is static, and static methods can only
   directly call other static methods/variables without creating an object first.
-- Your new class (e.g. `Ticket`/`Vehicle`/`Payment`) should generally **NOT** be static — its
+- Your new class (e.g. `Ticket`/`Vehicle`/`Payment`) should generally **NOT** be static  its
   methods are called on objects (`v.printVehicle()`), which is normal OOP style.
 
 ### char arithmetic (used in `showParkingLayout()`)
@@ -370,7 +370,7 @@ System.out.print("Row " + (char) ('A' + row) + " ");
 ## Quick Self-Test (answer before moving to file 3)
 1. Why is `parkingSlots` declared as `int[4][]` instead of `int[4][20]`?
 2. If a question says "row cannot be larger than 4," and the code does `row = input.nextInt() - 1`,
-   what should your upper-bound check actually compare against — `4` or `3`? Why?
+   what should your upper-bound check actually compare against  `4` or `3`? Why?
 3. In a constructor, why do we write `this.field = field` instead of just `field = field`?
 4. Why must you loop only up to `vehicleCount` and not the full array length when searching?
 5. What Java exception type do you need to catch when using `FileWriter`?

@@ -1,4 +1,4 @@
-# Java From Absolute Zero — Part 3: Methods
+# Java From Absolute Zero  Part 3: Methods
 
 ## 1. What is a method, and why do we need them?
 
@@ -7,12 +7,12 @@ writing the same code over and over, you write it once inside a method, then **c
 method by name whenever you need it.
 
 Think of a method like a recipe: it has a name ("Make Pancakes"), it might need ingredients
-(**parameters**), and it might produce a result (a **return value**) — or it might just *do*
+(**parameters**), and it might produce a result (a **return value**)  or it might just *do*
 something without giving anything back (like printing to the screen).
 
 ---
 
-## 2. Anatomy of a method — every word explained
+## 2. Anatomy of a method  every word explained
 
 ```java
 private static void showParkingLayout() {
@@ -38,13 +38,13 @@ private static int addNumbers(int a, int b) {
     return sum;
 }
 ```
-- `int` (before the name) — this method's **return type**. It promises to give back an `int`
+- `int` (before the name)  this method's **return type**. It promises to give back an `int`
   when it finishes. Every path through the method **must** end in a `return` statement matching
   this type, or the compiler will refuse to compile it.
-- `addNumbers` — the method's name.
-- `(int a, int b)` — the **parameters**: this method needs two whole numbers to do its job,
+- `addNumbers`  the method's name.
+- `(int a, int b)`  the **parameters**: this method needs two whole numbers to do its job,
   which will be temporarily called `a` and `b` while the method runs.
-- `return sum;` — **immediately exits** the method, handing back the value of `sum` to whoever
+- `return sum;`  **immediately exits** the method, handing back the value of `sum` to whoever
   called it.
 
 ### Calling (using) a method
@@ -71,7 +71,7 @@ public static int square(int number) {
     return number * number; // MUST return something, because return type is int
 }
 ```
-- If the return type is `void`, the method **cannot** use `return someValue;` — it can only use
+- If the return type is `void`, the method **cannot** use `return someValue;`  it can only use
   a plain `return;` (with nothing after it) to exit early if needed, or just let the method finish
   naturally.
 - If the return type is anything else (`int`, `double`, `String`, `boolean`, a class name, etc.),
@@ -82,7 +82,7 @@ public static int square(int number) {
 private static void parkCar() {
     if (row < 0 || row > 3) {
         System.out.println("Invalid row.");
-        return; // exits the method immediately — nothing below this runs
+        return; // exits the method immediately  nothing below this runs
     }
     // this code only runs if the row WAS valid
     System.out.println("Continuing...");
@@ -93,35 +93,35 @@ early** if some condition fails, so you don't need to wrap all the remaining cod
 
 ---
 
-## 4. Access Modifiers — `public` vs `private`
+## 4. Access Modifiers  `public` vs `private`
 
 These control **who is allowed to call/use this method (or field, or class)**.
 
 | Modifier | Who can access it |
 |---|---|
-| `public` | Anyone — any class, from anywhere in the program. |
+| `public` | Anyone  any class, from anywhere in the program. |
 | `private` | Only code written inside the **same class**. |
-| *(none — "default")* | Only code in the same **package** (folder of related classes) — rarely tested, low priority. |
-| `protected` | Same package, plus subclasses — advanced OOP topic, rarely needed at this level. |
+| *(none  "default")* | Only code in the same **package** (folder of related classes)  rarely tested, low priority. |
+| `protected` | Same package, plus subclasses  advanced OOP topic, rarely needed at this level. |
 
 **Why does it matter?** It's about **hiding internal details** so other code can't mess with
 them by accident. In the Car Park project:
-- `main()` and `initialiseParkingSlots()` are `public` — meant to be entry points others (like
+- `main()` and `initialiseParkingSlots()` are `public`  meant to be entry points others (like
   Java itself, calling `main`) need to reach.
-- `getOption()`, `parkCar()`, `showParkingLayout()` are `private` — internal helper methods that
+- `getOption()`, `parkCar()`, `showParkingLayout()` are `private`  internal helper methods that
   only `App` itself needs to call; nothing outside this class should ever need to call them
   directly.
 
-This same idea applies to **class fields** (variables), which is central to OOP — see Part 5.
+This same idea applies to **class fields** (variables), which is central to OOP  see Part 5.
 
 ---
 
-## 5. `static` — one of the trickiest ideas for beginners
+## 5. `static`  one of the trickiest ideas for beginners
 
 `static` means: **this belongs to the class itself, not to any individual object made from the
 class.**
 
-Imagine a class `Counter` that's meant to track "how many objects have been made so far" — that
+Imagine a class `Counter` that's meant to track "how many objects have been made so far"  that
 count should be shared and the same for *everyone*, not something each individual object has its
 own separate copy of. That's what `static` is for.
 
@@ -129,7 +129,7 @@ own separate copy of. That's what `static` is for.
 ```java
 public static void main(String[] args) { ... }
 ```
-`main` **must** be `static`, because when your program starts, **no objects exist yet** — Java
+`main` **must** be `static`, because when your program starts, **no objects exist yet**  Java
 needs a way to start running code without first having to create an `App` object. Since `main` is
 static, and static methods can only *directly* call other static things (without creating an
 object), every other method in `App.java` (`parkCar()`, `showParkingLayout()`, etc.) and the
@@ -138,9 +138,9 @@ object), every other method in `App.java` (`parkCar()`, `showParkingLayout()`, e
 ### The contrast: your own classes (like `Ticket`/`Vehicle`) are usually NOT static
 ```java
 public class Ticket {
-    private String registrationNumber; // NOT static — every Ticket object has its OWN copy
+    private String registrationNumber; // NOT static  every Ticket object has its OWN copy
 
-    public String getRegistrationNumber() { // NOT static — called on a specific object
+    public String getRegistrationNumber() { // NOT static  called on a specific object
         return registrationNumber;
     }
 }
@@ -149,11 +149,11 @@ public class Ticket {
 Ticket t1 = new Ticket("AB12", 5.0);
 Ticket t2 = new Ticket("CD34", 8.0);
 
-t1.getRegistrationNumber(); // returns "AB12" — belongs to t1 specifically
-t2.getRegistrationNumber(); // returns "CD34" — belongs to t2 specifically
+t1.getRegistrationNumber(); // returns "AB12"  belongs to t1 specifically
+t2.getRegistrationNumber(); // returns "CD34"  belongs to t2 specifically
 ```
 Here, each `Ticket` object keeps its **own separate** `registrationNumber`. That's the whole
-point of non-static (called "instance") fields and methods — every object gets its own copy of
+point of non-static (called "instance") fields and methods  every object gets its own copy of
 the data, and methods operate on "whichever object you called them on."
 
 **Simple rule for the exam:** `App.java`'s own methods/fields → `static`. Your new class's fields
@@ -163,7 +163,7 @@ and methods (getters, setters, print methods) → **not** `static`.
 
 ## 6. Method Overloading (good to recognise, rarely a whole question)
 
-You can have multiple methods with the **same name** but **different parameters** — Java tells
+You can have multiple methods with the **same name** but **different parameters**  Java tells
 them apart by how many/what type of arguments you pass.
 ```java
 public static int add(int a, int b) { return a + b; }
@@ -181,4 +181,4 @@ Calling `add(2, 3)` uses the first; `add(2.5, 3.5)` uses the second. You won't l
 4. If `Ticket` has a private field `parkingFee`, why do we still need a `public` getter for it?
 5. What does `return;` (with nothing after it) do inside a `void` method?
 
-**Next: Part 4 — Arrays (in full depth)**
+**Next: Part 4  Arrays (in full depth)**

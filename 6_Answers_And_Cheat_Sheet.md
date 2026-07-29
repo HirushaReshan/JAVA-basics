@@ -2,9 +2,9 @@
 
 ---
 
-## Part 1 — Answers to File 4 (Practice & Concept-Testing Questions)
+## Part 1  Answers to File 4 (Practice & Concept-Testing Questions)
 
-**Q1.1.** `new int[2][15]` creates a *rectangular* array — both rows are forced to have 15
+**Q1.1.** `new int[2][15]` creates a *rectangular* array  both rows are forced to have 15
 columns. It cannot give Row A 10 and Row B 15 different lengths. You need a jagged array instead:
 ```java
 int[][] parkingSlots = new int[2][];
@@ -20,7 +20,7 @@ rows[1] = new int[8];
 rows[2] = new int[12];
 ```
 
-**Q1.3.** It returns the number of slots in row index 2 (the 3rd row) — an `int`.
+**Q1.3.** It returns the number of slots in row index 2 (the 3rd row)  an `int`.
 
 **Q1.4.** Output: `3 6 9 ` (each number followed by a space).
 
@@ -83,7 +83,7 @@ public class Driver {
 }
 ```
 
-**Q3.2.** `private` hides the field from outside classes — it can only be accessed via getters
+**Q3.2.** `private` hides the field from outside classes  it can only be accessed via getters
 and setters, protecting the data (encapsulation). `public` would let any other class change it
 directly, bypassing any checks you might add in a setter. The exam expects `private` fields
 because encapsulation is a core OOP concept being assessed (LO3).
@@ -93,7 +93,7 @@ because encapsulation is a core OOP concept being assessed (LO3).
 Driver d = new Driver("Alex", 30);
 ```
 
-**Q3.4.** Bug: `name = name;` and `age = age;` assign the **parameter to itself** — the field
+**Q3.4.** Bug: `name = name;` and `age = age;` assign the **parameter to itself**  the field
 never actually gets updated (it stays `null`/`0`). It should be `this.name = name;` and
 `this.age = age;` to correctly refer to the object's field.
 
@@ -113,12 +113,12 @@ driverCount++;
 ```
 
 **Q4.3.** The next object added would **overwrite** the previous one at the same index (since
-`driverCount` never advances), and searches would miss earlier stored drivers — data would
+`driverCount` never advances), and searches would miss earlier stored drivers  data would
 silently be lost.
 
 **Q4.4.** If you create the object before checking success, you'd end up storing a record for an
 action that never actually happened (e.g. a car that wasn't actually parked because the slot was
-taken) — the data would be wrong/inconsistent with reality.
+taken)  the data would be wrong/inconsistent with reality.
 
 ---
 
@@ -170,7 +170,7 @@ private static void saveDriversToFile() {
 }
 ```
 
-**Q6.3.** Because `FileWriter` operations can throw a **checked exception** (`IOException`) —
+**Q6.3.** Because `FileWriter` operations can throw a **checked exception** (`IOException`) 
 Java requires checked exceptions to be either caught or declared with `throws`, and `try/catch`
 is the standard way to handle it gracefully instead of crashing.
 
@@ -182,7 +182,7 @@ file may end up incomplete, empty, or locked for other programs to use.
 **Rapid Fire answers:**
 1. `7`
 2. `19`
-3. `if (age == 18)` — use `==` for comparison, `=` is assignment
+3. `if (age == 18)`  use `==` for comparison, `=` is assignment
 4. `private`
 5. The current object instance being constructed/operated on
 6. `do-while`
@@ -193,7 +193,7 @@ file may end up incomplete, empty, or locked for other programs to use.
 
 ---
 
-## Part 2 — Answers to File 5 (Full Practice Lab Test)
+## Part 2  Answers to File 5 (Full Practice Lab Test)
 
 ### Answer 1
 ```java
@@ -310,7 +310,7 @@ private static void parkCar() {
 }
 ```
 *(An equally valid alternative for the fee calculation is a `pricePerRow[]` array declared as a
-global variable, then `fee = pricePerRow[row];` — either approach is correct.)*
+global variable, then `fee = pricePerRow[row];`  either approach is correct.)*
 
 ### Answer 5
 ```java
@@ -358,7 +358,7 @@ if the question asks for fully complete code including imports.)*
 
 ---
 
-## Part 3 — Exam-Day Cheat Sheet (mental checklist, ~2 min review before you start)
+## Part 3  Exam-Day Cheat Sheet (mental checklist, ~2 min review before you start)
 
 **Before writing anything, ask yourself:**
 - [ ] Is this a full-method rewrite, or just an addition? (Re-read the question wording.)
@@ -419,5 +419,5 @@ try {
 }
 ```
 
-Good luck — you've got this. Master the **pattern**, and any variation of numbers/names/field
+Good luck  you've got this. Master the **pattern**, and any variation of numbers/names/field
 labels on the day will just be filling in the same shape you've already practiced.

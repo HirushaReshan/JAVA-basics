@@ -1,14 +1,14 @@
 # Practice & Concept-Testing Questions
 
 Use these to test your understanding of each *isolated* concept before attempting the full
-timed practice test (file 5). Try to answer without looking back at your notes first — that's
+timed practice test (file 5). Try to answer without looking back at your notes first  that's
 the real test of whether you've mastered it.
 
 Answers are in **`6_Answers_And_Cheat_Sheet.md`**.
 
 ---
 
-## Section 1 — Arrays
+## Section 1  Arrays
 
 **Q1.1.** What is wrong with this code, if the goal is to have Row A hold 10 slots and Row B hold
 15 slots?
@@ -31,14 +31,14 @@ for (int i = 0; i < arr.length; i++) {
 
 ---
 
-## Section 2 — Validation
+## Section 2  Validation
 
 **Q2.1.** A method does `int row = input.nextInt() - 1;`. The requirement says "row cannot be
 smaller than 1, cannot be larger than 5." Write the correct `if` condition to catch invalid input
 (using the `row` variable, which is already adjusted by `-1`).
 
 **Q2.2.** Rewrite this so that an occupied-slot message is only shown when the row/slot are
-actually valid, otherwise show an "invalid" message instead — don't let it try to access the
+actually valid, otherwise show an "invalid" message instead  don't let it try to access the
 array with a bad index:
 ```java
 private static void parkCar() {
@@ -59,7 +59,7 @@ Explain your answer.
 
 ---
 
-## Section 3 — Classes / OOP
+## Section 3  Classes / OOP
 
 **Q3.1.** Write a class `Driver` with a private `String name` and private `int age`, a constructor,
 getters and setters for both, and a `printDriver()` method.
@@ -87,7 +87,7 @@ public Driver(String name, int age) {
 
 ---
 
-## Section 4 — Arrays of Objects
+## Section 4  Arrays of Objects
 
 **Q4.1.** Declare a global array that can hold up to 50 `Driver` objects, plus a counter variable
 to track how many are currently stored.
@@ -102,7 +102,7 @@ before it?
 
 ---
 
-## Section 5 — Searching
+## Section 5  Searching
 
 **Q5.1.** Write a method `searchDrivers(int targetAge)` that searches the `Driver` array from
 Q4.1 and prints the name of every driver with that age. If none are found, print
@@ -115,7 +115,7 @@ added so far?
 
 ---
 
-## Section 6 — File I/O
+## Section 6  File I/O
 
 **Q6.1.** What two `import` statements are typically needed to use `FileWriter` and handle its
 exception?
@@ -129,7 +129,7 @@ line, comma-separated) from the array in Q4.1 to a file called `drivers.txt`.
 
 ---
 
-## Section 7 — Mixed / Rapid Fire (30 seconds each)
+## Section 7  Mixed / Rapid Fire (30 seconds each)
 1. What does `array.length` return for `int[] arr = new int[7];`?
 2. What's the index of the last element in a 20-element array?
 3. Fix the bug: `if (age = 18)`
@@ -144,6 +144,6 @@ line, comma-separated) from the array in Q4.1 to a file called `drivers.txt`.
 ---
 
 ## Self-Study Tip
-For every question above, don't just check the answer — **type the code out yourself** in a
+For every question above, don't just check the answer  **type the code out yourself** in a
 plain text file (not an IDE) to simulate the no-IDE, no-autocomplete exam conditions you'll face
 in Safe Exam Browser.
