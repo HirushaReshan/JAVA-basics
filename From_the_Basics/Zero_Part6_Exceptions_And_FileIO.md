@@ -169,6 +169,6 @@ flow (if/switch/loops), methods (return types, parameters, static, access modifi
 (1D/2D/jagged, arrays of objects), full OOP (classes, objects, constructors, this, getters,
 setters, encapsulation, static vs instance), exceptions, and file I/O.
 
-**Next step:** go to `[2_Concept_Teaching_Full.md](../Lab_content/2_Concept_Teaching_Full)` and `[3_CarParkManagement_Deep_Dive.md](../Lab_content/3_CarParkManagement_Deep_Dive.md)`
+**Next step:** go to [2_Concept_Teaching_Full.md](../Lab_content/2_Concept_Teaching_Full.md) and [3_CarParkManagement_Deep_Dive.md](../Lab_content/3_CarParkManagement_Deep_Dive.md)
 Then move on to the practice
 questions and the timed mock test.
