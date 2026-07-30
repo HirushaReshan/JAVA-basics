@@ -1,22 +1,22 @@
-# Mock Test — Full Assembled Solution & Index
+# Mock Test Full Assembled Solution & Index
 
 Use this file to see how **all 6 questions fit together** into one complete, working program,
 and as a map back to the detailed word-by-word explanation of each question.
 
 ---
 
-## Index — where to find each explanation
+## Index where to find each explanation
 
 | Question | File | What it teaches |
 |---|---|---|
-| Q1 (5 pts) | `MockTest_Q1_Explained.md` | Rewriting `initialiseRows()` — jagged arrays |
-| Q2 (15 pts) | `MockTest_Q2_Explained.md` | Adding validation to `buyTicket()` — if/else chains, index translation |
-| Q3 (20 pts) | `MockTest_Q3_Explained.md` | Writing the `Payment` class — fields, constructor, getters/setters, `this` |
+| Q1 (5 pts) | `MockTest_Q1_Explained.md` | Rewriting `initialiseRows()` jagged arrays |
+| Q2 (15 pts) | `MockTest_Q2_Explained.md` | Adding validation to `buyTicket()` if/else chains, index translation |
+| Q3 (20 pts) | `MockTest_Q3_Explained.md` | Writing the `Payment` class fields, constructor, getters/setters, `this` |
 | Q4 (20 pts) | `MockTest_Q4_Explained.md` | Array of objects + conditional object creation + pricing logic |
-| Q5 (30 pts) | `MockTest_Q5_Explained.md` | Searching an array of objects — loops, flags, `.equals()` vs `==` |
-| Q6 (10 pts) | `MockTest_Q6_Explained.md` | Saving objects to a file — `try/catch`, `FileWriter` |
+| Q5 (30 pts) | `MockTest_Q5_Explained.md` | Searching an array of objects loops, flags, `.equals()` vs `==` |
+| Q6 (10 pts) | `MockTest_Q6_Explained.md` | Saving objects to a file `try/catch`, `FileWriter` |
 
-If any single line below doesn't make sense, go to the matching file above — it explains that
+If any single line below doesn't make sense, go to the matching file above it explains that
 exact line, word by word, and why it exists.
 
 ---
@@ -254,7 +254,7 @@ public class App {
 ```
 
 **Note on the menu:** adding `case 3` and `case 4` to `runMenu()` and the extra lines in
-`getOption()`'s printed menu are **not explicitly asked for** in the mock questions — they're
+`getOption()`'s printed menu are **not explicitly asked for** in the mock questions they're
 included here only so the whole program is genuinely runnable end-to-end for your own practice
 in IntelliJ. In the actual exam, you only need to write exactly what each question asks for
 (the method itself), not necessarily wire it into the menu, unless a question specifically tells
@@ -272,5 +272,5 @@ you to.
 3. Then go through each `MockTest_QX_Explained.md` file's "Quick self-check" questions without
    looking at the answers first.
 4. Finally, apply the exact same logic to the Car Park Management project using your earlier
-   `3_CarParkManagement_Deep_Dive.md` and `5_Full_Practice_Lab_Test.md` files — the skills
+   `3_CarParkManagement_Deep_Dive.md` and `5_Full_Practice_Lab_Test.md` files the skills
    transfer directly.

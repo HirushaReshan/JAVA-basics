@@ -1,4 +1,4 @@
-# Mock Test Question 2 — Fully Explained From Zero
+# Mock Test Question 2 Fully Explained From Zero
 
 ## Decoding the question, sentence by sentence
 
@@ -10,7 +10,7 @@ them actually buy a seat there.
 
 > "Refer to buyTicket() method in line number 75-91 of sample code."
 
-**Plain English:** Go look at lines 75 to 91 in the given code file — that's where the method
+**Plain English:** Go look at lines 75 to 91 in the given code file that's where the method
 called `buyTicket()` lives. This tells you exactly which method you're allowed/expected to
 change.
 
@@ -28,12 +28,12 @@ use an invalid row and crashing.
 > "Write the updated buyTicket() method in the answer box below."
 
 **Plain English:** Just like Question 1, you give back the **whole method**, not just the new
-lines — but this time, the method you're rewriting is `buyTicket()`, and you're adding validation
+lines but this time, the method you're rewriting is `buyTicket()`, and you're adding validation
 logic to it.
 
 ---
 
-## Step 1 — The original, unmodified method (given to you)
+## Step 1 The original, unmodified method (given to you)
 
 ```java
 75 private static void buyTicket() {
@@ -54,27 +54,27 @@ logic to it.
 90 }
 ```
 
-## Step 2 — Understanding every line, so you know exactly what's happening before you add anything
+## Step 2 Understanding every line, so you know exactly what's happening before you add anything
 
-- `Scanner input = new Scanner(System.in);` — creates a tool to read what the user types on the
+- `Scanner input = new Scanner(System.in);` creates a tool to read what the user types on the
   keyboard.
-- `System.out.print("Enter row number: ");` — displays a prompt asking for the row.
-- `int row = input.nextInt() - 1;` — reads the number the user typed, then **immediately
+- `System.out.print("Enter row number: ");` displays a prompt asking for the row.
+- `int row = input.nextInt() - 1;` reads the number the user typed, then **immediately
   subtracts 1**. This is critical to understand: if the user types `1` (meaning "row 1" in human
   terms), the variable `row` actually ends up storing `0` (the correct zero-indexed array
   position for the first row). If the user types `4`, `row` ends up storing `3`.
 - The same thing happens for `seat`.
-- `if (planeSeats[row][seat] == 0)` — this is the **only** check currently in the method: "is
+- `if (planeSeats[row][seat] == 0)` this is the **only** check currently in the method: "is
   this specific seat available?" **There is currently no check at all on whether `row` or `seat`
   are sensible numbers.** If the user types `9` for the row, `row` becomes `8`, and
-  `planeSeats[8][...]` doesn't exist (only indexes 0–3 exist, since there are 4 rows) — this
+  `planeSeats[8][...]` doesn't exist (only indexes 0–3 exist, since there are 4 rows) this
   would crash the program immediately with an error.
 
 **This is exactly the gap the question wants you to fix.**
 
 ---
 
-## Step 3 — Figuring out the correct boundary numbers (the trickiest part of this question)
+## Step 3 Figuring out the correct boundary numbers (the trickiest part of this question)
 
 The question says, in **human/1-based terms**:
 - Row cannot be smaller than 1
@@ -103,18 +103,18 @@ if (row < 0 || row > 3) {
 **Why `> 3` and not `> 4`?** Because `row` has already been reduced by 1. The 4th (last) row, when
 typed as `4` by the user, becomes `3` internally. So "larger than the last valid row" means
 `row > 3`, not `row > 4`. This is the single most common mistake students make on this exact
-question — mixing up whether you're validating the "before `-1`" number or the "after `-1`"
+question mixing up whether you're validating the "before `-1`" number or the "after `-1`"
 number. **Always validate the actual variable as it exists at that point in the code.**
 
 ---
 
-## Step 4 — Fitting this into the existing if/else structure correctly
+## Step 4 Fitting this into the existing if/else structure correctly
 
 You now have **two decisions** to make in sequence:
 1. Is the row number valid at all?
 2. *(Only if yes)* Is the seat actually available?
 
-This is a perfect use of `if / else if / else` (from Zero Part 2) — chained together so only one
+This is a perfect use of `if / else if / else` (from Zero Part 2) chained together so only one
 message ever prints:
 
 ```java
@@ -129,13 +129,13 @@ if (row < 0 || row > 3) {
 }
 ```
 
-Read this out loud as a decision tree: *"First, check if the row is invalid — if so, say so and
-stop. Otherwise (meaning the row WAS valid), check if the seat is free — if so, buy it and show
+Read this out loud as a decision tree: *"First, check if the row is invalid if so, say so and
+stop. Otherwise (meaning the row WAS valid), check if the seat is free if so, buy it and show
 the seating area. Otherwise (row was valid, but seat wasn't free), say it's already taken."*
 
 ---
 
-## Step 5 — The complete final answer
+## Step 5 The complete final answer
 
 ```java
 private static void buyTicket() {
@@ -158,7 +158,7 @@ private static void buyTicket() {
 }
 ```
 
-Notice everything above line 82 stays exactly as given — you didn't need to touch how input is
+Notice everything above line 82 stays exactly as given you didn't need to touch how input is
 read, only add validation **before** the existing seat-availability check is allowed to run.
 
 ---
@@ -189,10 +189,10 @@ zero-indexed boundary check, and insert it as the first condition in an `if/else
    condition would you add, and where?
 
 *(1: because `row` has already had `-1` subtracted from the user's typed value by the time it's
-checked, so the valid range 1–4 (human) becomes 0–3 (code). 2: if the row is invalid — e.g. `row`
-= 8 — Java would try to access `planeSeats[8][seat]`, which doesn't exist, and crash with an
+checked, so the valid range 1–4 (human) becomes 0–3 (code). 2: if the row is invalid e.g. `row`
+= 8 Java would try to access `planeSeats[8][seat]`, which doesn't exist, and crash with an
 `ArrayIndexOutOfBoundsException`, before your validation message ever gets a chance to print. 3:
-because a single number can never be BOTH less than 0 AND greater than 3 at the same time — using
+because a single number can never be BOTH less than 0 AND greater than 3 at the same time using
 `&&` here would make the condition impossible to ever be true. 4: something like
 `else if (seat < 0 || seat >= planeSeats[row].length)`, placed as an additional `else if` between
 the row check and the availability check.)*
